@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;500;600&family=Playfair+Display&display=swap');
+
+:root {
+  --Font: 'Barlow Condensed', sans-serif;
+  --Font-Title: 'Playfair Display', serif;
+  --Light-Gray: rgb(200, 200, 200);
+  --Gray: rgb(150, 150, 150);
+  --Decoration-Gray: rgba(255, 255, 255, .6);
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
+  /* outline: red 1px solid; */
+}
+
+html {
+  font-size: 12px;
+}
+
+body {
+  color: var(--Light-Gray);
+  font-family: var(--Font);
+}
+
+.title {
+  color: white;
+  padding-top: 25vh;
+  margin-left: 15rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 5px;
+}
+
+.title span {
+  font-weight: bold;
+  color: var(--Gray);
+}
+
+a {
+  font-family: var(--Font);
+}
+
+img {
+  display: block;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  padding: 2rem 0 4rem 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 4rem;
+  transition: all .3s;
+}
+
+.after {
+  position: relative;
+}
+
+.logo:hover {
+  transform: scale(1.2);
+}
+
+.after::after {
+  content: "";
+  background-color: var(--Decoration-Gray);
+  position: absolute;
+  width: 34vw;
+  height: 2px;
+  left: 9rem;
+  top: calc(2rem - 1px);
+}
+
+.burger {
+  display: none;
+}
+
+.header__nav {
+  background-color: rgba(100, 100, 100, 0.5);
+  width: 55vw;
+  height: 10vh;
+  padding-left: 2rem;  
+  overflow: hidden;
+}
+
+.header__list {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav__link {
+  display: block;
+  margin: .4rem 1rem 0;
+  padding: 0;
+  height: calc(10vh - 4px);
+  line-height: calc(10vh - 8px);
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  transition: all .2s;
+}
+
+.nav__link span {
+  letter-spacing: 4px;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.nav__link:hover {
+  border-bottom: 8px var(--Decoration-Gray) solid;
+}
+
+.nav__link.active {
+  border-bottom: 8px white solid;
+  pointer-events: none;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+}
+
+@media screen and (max-width: 800px) {
+  .title {
+    padding-top: 16vh;
+    margin-left: 4rem;
+  }
+  
+  header {
+    position: relative;
+    padding: 0;
+    padding-left: 4rem;
+  }
+  
+  .logo {
+    transition: none;
+  }
+  
+  .logo:hover {
+    transform: scale(1);
+  }
+  
+  .after::after {
+    display: none;
+  }
+  
+  .header__nav {
+    width: 60vw;
+    padding-left: 0rem;
+  }
+  
+  .header__list {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 0;
+  }
+  
+  .nav__link {
+    margin: 0;
+    height: 10vh;
+    font-size: 2rem;
+  }
+  
+  .nav__link span {
+    display: none;
+  }
+  
+  .nav__link:hover {
+    border-bottom: none;
+  }
+  
+  .nav__link.active {
+    border-bottom: 8px white solid;
+  }
+  
+  main {
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .title {
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  header {
+    position: static;
+    padding: 1rem;
+  }
+  
+  .burger {
+    display: block;
+    height: 2rem;
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+  }
+
+  .header__nav {
+    overflow: initial;
+    position: fixed;
+    left: 100vw;
+    width: 40vw;    
+    transition: all .3s;
+  }
+  
+  .header__nav.active {
+    left: 60vw;
+    z-index: 10;
+  }
+  
+  .header__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    padding-top: 12vh;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .nav__link {
+    margin: 0;
+    padding-left: 1rem;
+    height: min-content;
+    line-height: 2rem;
+    font-size: 2rem;
+  }
+  
+  .nav__link span {
+    display: inline;
+  }
+  
+  .nav__link:hover {
+    border-bottom: none;
+  }
+  
+  .nav__link.active {
+    border-left: .5rem white solid;
+    border-bottom: none;
+  }
+  
+  main {
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+}

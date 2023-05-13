@@ -1,0 +1,155 @@
+.crew__body {
+  background-image: url(/src/starter-code/assets/crew/background-crew-desktop.jpg);
+  overflow: hidden;
+}
+
+.crew__container {
+  margin-left: 15rem;
+  height: 80vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.crew__div {
+  width: 40vw;
+  height: 36vh;
+  margin-bottom: 30vh;
+  position: relative;
+  display: grid;
+  grid-template-rows: min-content min-content 1fr;
+}
+
+.crew__div h3 {
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-size: 2.5rem;
+  font-family: var(--Font-Title);
+}
+
+.crew__div h2 {
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 4rem;
+  font-family: var(--Font-Title);
+  color: white;
+}
+
+.crew__div p {
+  font-size: 1.75rem;
+  line-height: 2.5rem;
+  margin: auto 0;
+  width: 80%;
+}
+
+.crew__nav {
+  /*position: absolute;*/
+  bottom: -10vh;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.crew__link {
+  font-size: 0;
+  padding: .5rem;
+  border-radius: 50%;
+  background-color: var(--Gray);
+  border: none;
+  /* cursor: pointer; */
+  transition: all .3s;
+}
+
+.crew__link.selected {
+  background-color: white;
+}
+
+.crew__container img {
+  height: 100%;
+  width: auto;
+  margin: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .crew__body {
+    background-image: url(/src/starter-code/assets/crew/background-crew-tablet.jpg);
+    margin-top: -7rem;
+    height: auto;
+  }
+  
+  .crew__container {
+    margin: auto;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .crew__div {
+    width: 70vw;
+    height: auto;
+    margin-top: 2rem;
+    margin-bottom: 0vh;
+    text-align: center;
+  }
+  
+  .crew__div h3 {
+    font-size: 2rem;
+  }
+  
+  .crew__div h2 {
+    font-size: 3.5rem;
+  }
+  
+  .crew__div p {
+    font-size: 1.5rem;
+    margin: auto;
+    width: 100%;
+  }
+  
+  .crew__nav {
+    position: static;
+    gap: 2rem;
+    margin: 1rem auto 2rem;
+  }
+  
+  .crew__container img {
+    height: 100%;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .crew__body {
+    background-image: url(/src/starter-code/assets/crew/background-crew-mobile.jpg);
+  }
+  
+  .crew__container {
+    margin: auto;
+    flex-direction: column-reverse;
+    margin-bottom: 20rem;
+  }
+  
+  .crew__div {
+    width: 90vw;
+    margin: 0;
+    padding-bottom: 2rem;
+  }
+  
+  .crew__div h2 {
+    font-size: 3rem;
+  }
+  
+  .crew__nav {
+    position: static;
+    /* bottom: -10vh; */
+    /* display: flex; */
+    gap: 2rem;
+    margin: 1rem auto;
+    order: -1;
+  }
+  
+  .crew__container img {
+    height: 30vh;
+    width: auto;
+    margin: 1rem 0;
+  }
+}
